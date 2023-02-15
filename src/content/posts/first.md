@@ -1,8 +1,7 @@
 ---
 title: "First Astro Blog"
 date: 2022-09-30 17:08:49
-categories: []
-tags: []
+tags: ["Astro"]
 image:
   url: "https://astro.build/assets/blog/astro-1-release-update/cover.jpeg"
   alt: "The Astro logo with the word One."
