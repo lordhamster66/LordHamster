@@ -1,64 +1,111 @@
 ---
-title: "PicGo+腾讯云COS搭建属于自己的图床"
+title: "First Astro Blog"
 date: 2022-09-30 17:08:49
 categories: []
 tags: []
-summary: ""
 image:
   url: "https://astro.build/assets/blog/astro-1-release-update/cover.jpeg"
   alt: "The Astro logo with the word One."
+summary: "First Astro Blog"
 ---
 
-## PicGo 是啥?
+Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
 
-直接看[官网](https://picgo.github.io/PicGo-Doc/zh/guide/)即可
+## Headings
 
-## 设置直接看图
+The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
 
-![](https://img.lordhamster.com/img/2022/09/30/20220930163253.png)
+# H1
 
-## 腾讯云对象存储
+## H2
 
-![](https://img.lordhamster.com/img/2022/09/30/20220930164936.png)
-访问权限选择**公有读私有写**，否则图片无法读取，其他的根据自己往下填写就可以。 地域建议离你所在的位置越近越好。
+### H3
 
-## 获取 APPID、SecretId、SecretKey
+#### H4
 
-腾讯云头像–>[访问管理](https://console.cloud.tencent.com/cam/overview)–> 访问秘钥 -> [API 密钥管理](https://console.cloud.tencent.com/cam/capi)，新建密钥，就会生成 **APPID、SecretId 和 SecretKey**
-![](https://img.lordhamster.com/img/2022/09/30/20220930164402.png)
-![](https://img.lordhamster.com/img/2022/09/30/20220930164410.png)
+##### H5
 
-## 配置 CDN 加速
+###### H6
 
-![](https://img.lordhamster.com/img/2022/09/30/20220930165800.png)
+## Paragraph
 
-## 自动增加前缀
+Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
 
-> eg: /2022/09/30/20220930165800.png
+Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
 
-避免在一个文件夹下存储大量图片，造成性能影响。  
-利用`picgo-plugin-super-prefix`插件实现
-![](https://img.lordhamster.com/img/2022/09/30/20220930170026.png)
+## Images
 
-## picgo-plugin-super-prefix
+![This is a placeholder image description](https://astro.build/assets/blog/astro-1-release-update/cover.jpeg)
 
-[github 地址](https://github.com/gclove/picgo-plugin-super-prefix)
-A PicGo plugin for elegant file name prefix  
-可以很  **优雅地**  生成文件存储路径的插件
+## Blockquotes
 
-### install
+The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
 
-![](https://img.lordhamster.com/img/2022/09/30/20220930164031.png)
+#### Blockquote without attribution
 
-### eg
+> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
+> **Note** that you can use _Markdown syntax_ within a blockquote.
 
-`/img/2019/11/18/20191118005858.jpeg`
+#### Blockquote with attribution
 
-### setting
+> Don't communicate by sharing memory, share memory by communicating.<br>
+> — <cite>Rob Pike[^1]</cite>
 
-![](https://img.lordhamster.com/img/2022/09/30/20220930163851.png)
+[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 
-| 参数         | 建议值           | 说明                        |
-| ------------ | ---------------- | --------------------------- |
-| prefixFormat | `YYYY/MM/DD/`    | 文件名个性前缀格式(以/结尾) |
-| fileFormat   | `YYYYMMDDHHmmss` | 文件名个性格式              |
+## Tables
+
+| Italics   | Bold     | Code   |
+| --------- | -------- | ------ |
+| _italics_ | **bold** | `code` |
+
+## Code Blocks
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Example HTML5 Document</title>
+  </head>
+  <body>
+    <p>Test</p>
+  </body>
+</html>
+```
+
+## List Types
+
+#### Ordered List
+
+1. First item
+2. Second item
+3. Third item
+
+#### Unordered List
+
+- List item
+- Another item
+- And another item
+
+#### Nested list
+
+- Fruit
+  - Apple
+  - Orange
+  - Banana
+- Dairy
+  - Milk
+  - Cheese
+
+## Other Elements — abbr, sub, sup, kbd, mark
+
+<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
+
+H<sub>2</sub>O
+
+X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
+
+Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
+
+Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.

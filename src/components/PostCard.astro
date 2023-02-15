@@ -1,7 +1,30 @@
 ---
-const { url, title } = Astro.props;
+const { url, title, date, imgUrl, imgAlt, summary } = Astro.props;
 ---
 
-<li>
-    <a href={url}>{title}</a>
-</li>
+<a class="hover:translate-y-1" href={url}
+    ><div class="overflow-hidden rounded-md bg-slate-800">
+        <div class="aspect-w-3 aspect-h-2">
+            <img
+                class="h-full w-full object-cover object-center"
+                src={imgUrl}
+                alt={imgAlt}
+                loading="lazy"
+            />
+        </div><div class="px-3 pt-4 pb-6 text-center">
+            <h2 class="text-xl font-semibold">{title}</h2><div
+                class="mt-1 text-xs text-gray-400"
+            >
+                {
+                    date.toLocaleDateString("zh", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                    })
+                }
+            </div><div class="mt-2 text-sm">
+                {summary}
+            </div>
+        </div>
+    </div>
+</a>
