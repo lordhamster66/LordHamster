@@ -1,15 +1,13 @@
 ---
+import Intro from "../components/Intro.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "请叫我仓鼠阁下";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+    <div
+        class="flex flex-col items-center md:flex-row md:justify-between md:gap-x-24"
+    >
+        <Intro />
+    </div>
+</BaseLayout>

@@ -1,0 +1,64 @@
+---
+title: "PicGo+腾讯云COS搭建属于自己的图床"
+date: 2022-09-30 17:08:49
+categories: []
+tags: []
+summary: ""
+image:
+  url: "https://astro.build/assets/blog/astro-1-release-update/cover.jpeg"
+  alt: "The Astro logo with the word One."
+---
+
+## PicGo 是啥?
+
+直接看[官网](https://picgo.github.io/PicGo-Doc/zh/guide/)即可
+
+## 设置直接看图
+
+![](https://img.lordhamster.com/img/2022/09/30/20220930163253.png)
+
+## 腾讯云对象存储
+
+![](https://img.lordhamster.com/img/2022/09/30/20220930164936.png)
+访问权限选择**公有读私有写**，否则图片无法读取，其他的根据自己往下填写就可以。 地域建议离你所在的位置越近越好。
+
+## 获取 APPID、SecretId、SecretKey
+
+腾讯云头像–>[访问管理](https://console.cloud.tencent.com/cam/overview)–> 访问秘钥 -> [API 密钥管理](https://console.cloud.tencent.com/cam/capi)，新建密钥，就会生成 **APPID、SecretId 和 SecretKey**
+![](https://img.lordhamster.com/img/2022/09/30/20220930164402.png)
+![](https://img.lordhamster.com/img/2022/09/30/20220930164410.png)
+
+## 配置 CDN 加速
+
+![](https://img.lordhamster.com/img/2022/09/30/20220930165800.png)
+
+## 自动增加前缀
+
+> eg: /2022/09/30/20220930165800.png
+
+避免在一个文件夹下存储大量图片，造成性能影响。  
+利用`picgo-plugin-super-prefix`插件实现
+![](https://img.lordhamster.com/img/2022/09/30/20220930170026.png)
+
+## picgo-plugin-super-prefix
+
+[github 地址](https://github.com/gclove/picgo-plugin-super-prefix)
+A PicGo plugin for elegant file name prefix  
+可以很  **优雅地**  生成文件存储路径的插件
+
+### install
+
+![](https://img.lordhamster.com/img/2022/09/30/20220930164031.png)
+
+### eg
+
+`/img/2019/11/18/20191118005858.jpeg`
+
+### setting
+
+![](https://img.lordhamster.com/img/2022/09/30/20220930163851.png)
+
+| 参数         | 建议值           | 说明                        |
+| ------------ | ---------------- | --------------------------- |
+| prefixFormat | `YYYY/MM/DD/`    | 文件名个性前缀格式(以/结尾) |
+| fileFormat   | `YYYYMMDDHHmmss` | 文件名个性格式              |

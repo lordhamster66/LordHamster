@@ -1,0 +1,30 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+    <h1 class="text-center text-3xl font-bold">{frontmatter.title}</h1>
+    <div class="mt-2 text-center text-sm text-gray-400">
+        {
+            frontmatter.date.toLocaleDateString("zh", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+            })
+        }
+    </div>
+    <div class="mx-auto mt-5 max-w-prose">
+        <div class="aspect-w-3 aspect-h-2">
+            <img
+                class="h-full w-full rounded-lg object-cover object-center"
+                src={frontmatter.image.url}
+                alt={frontmatter.image.alt}
+                loading="lazy"
+            />
+        </div>
+        <div class="prose prose-invert mt-8 prose-img:rounded-lg">
+            <slot />
+        </div>
+    </div>
+</BaseLayout>
