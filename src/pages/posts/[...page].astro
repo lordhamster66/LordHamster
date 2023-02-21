@@ -1,15 +1,15 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostCard from "../../components/PostCard.astro";
 import Pagination from "../../components/Pagination.astro";
+import { getCollection } from "astro:content";
 export async function getStaticPaths({ paginate }) {
     const allPosts = await getCollection("posts");
     return paginate(allPosts.reverse(), {
         pageSize: 9,
     });
 }
-const pageTitle = "博客列表";
+const pageTitle = "All My Blogs";
 const { page } = Astro.props;
 ---
 

@@ -9,7 +9,7 @@ const indigo = ["CSS", "Bootstrap", "Tailwind"];
 const all = [...fuchsia, ...sky, ...rose, ...lime, ...yellow, ...indigo];
 ---
 
-<div
+<a
     class:list={[
         "rounded-md px-2 py-1 text-xs font-semibold hover:translate-y-1",
         {
@@ -29,6 +29,7 @@ const all = [...fuchsia, ...sky, ...rose, ...lime, ...yellow, ...indigo];
             "text-violet-900": !all.includes(tag),
         },
     ]}
+    href={`/tags/${tag}/`}
 >
-    <a href={`/tags/${tag}/`}>{tag}</a>
-</div>
+    {tag}
+</a>
