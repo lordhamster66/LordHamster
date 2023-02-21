@@ -67,9 +67,9 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"posts": {
-"first.md": {
-  id: "first.md",
-  slug: "first",
+"post0000.md": {
+  id: "post0000.md",
+  slug: "post0000",
   body: string,
   collection: "posts",
   data: InferEntrySchema<"posts">
@@ -77,6 +77,69 @@ declare module 'astro:content' {
 "post0001.md": {
   id: "post0001.md",
   slug: "post0001",
+  body: string,
+  collection: "posts",
+  data: InferEntrySchema<"posts">
+},
+"post00010.md": {
+  id: "post00010.md",
+  slug: "post00010",
+  body: string,
+  collection: "posts",
+  data: InferEntrySchema<"posts">
+},
+"post0002.md": {
+  id: "post0002.md",
+  slug: "post0002",
+  body: string,
+  collection: "posts",
+  data: InferEntrySchema<"posts">
+},
+"post0003.md": {
+  id: "post0003.md",
+  slug: "post0003",
+  body: string,
+  collection: "posts",
+  data: InferEntrySchema<"posts">
+},
+"post0004.md": {
+  id: "post0004.md",
+  slug: "post0004",
+  body: string,
+  collection: "posts",
+  data: InferEntrySchema<"posts">
+},
+"post0005.md": {
+  id: "post0005.md",
+  slug: "post0005",
+  body: string,
+  collection: "posts",
+  data: InferEntrySchema<"posts">
+},
+"post0006.md": {
+  id: "post0006.md",
+  slug: "post0006",
+  body: string,
+  collection: "posts",
+  data: InferEntrySchema<"posts">
+},
+"post0007.md": {
+  id: "post0007.md",
+  slug: "post0007",
+  body: string,
+  collection: "posts",
+  data: InferEntrySchema<"posts">
+},
+"post0008.md": {
+  id: "post0008.md",
+  slug: "post0008",
+  body: string,
+  collection: "posts",
+  data: InferEntrySchema<"posts">
+},
+"post0009.md": {
+  id: "post0009.md",
+  slug: "post0009",
   body: string,
   collection: "posts",
   data: InferEntrySchema<"posts">

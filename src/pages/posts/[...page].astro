@@ -2,8 +2,15 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostCard from "../../components/PostCard.astro";
-const allPosts = await getCollection("posts");
+import Pagination from "../../components/Pagination.astro";
+export async function getStaticPaths({ paginate }) {
+    const allPosts = await getCollection("posts");
+    return paginate(allPosts.reverse(), {
+        pageSize: 9,
+    });
+}
 const pageTitle = "博客列表";
+const { page } = Astro.props;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -16,10 +23,13 @@ const pageTitle = "博客列表";
     <div class="mx-auto max-w-screen-lg px-3 py-6">
         <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
             {
-                allPosts.map((post) => (
+                page.data.map((post) => (
                     <PostCard url={"/posts/" + post.slug} data={post.data} />
                 ))
             }
         </div>
+    </div>
+    <div class="mx-auto max-w-screen-lg px-3 py-6">
+        <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
     </div>
 </BaseLayout>

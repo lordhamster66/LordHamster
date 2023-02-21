@@ -1,26 +1,15 @@
 ---
+import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 const { pageTitle } = Astro.props;
 ---
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link
-            rel="icon"
-            type="image/svg+xml"
-            href="/images/lordhamster_logo.png"
-        />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
-    </head>
+    <BaseHead pageTitle={pageTitle} />
     <body class="bg-slate-900 text-gray-100">
         <Header />
-        <div class="mx-auto max-w-screen-lg px-3 py-6">
-            <slot />
-        </div>
+        <slot />
         <Footer />
     </body>
 </html>
