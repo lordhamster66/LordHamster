@@ -1,0 +1,30 @@
+---
+import PostCard from "../components/PostCard.astro";
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
+---
+
+<div class="mb-6 text-2xl font-bold">
+    <div class="flex items-baseline justify-between">
+        <div>
+            Recent
+            <span
+                class="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent"
+            >
+                Posts
+            </span>
+        </div><div class="text-sm">
+            <a href="/posts">View all Posts →</a>
+        </div>
+    </div>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+    {
+        allPosts
+            .reverse()
+            .splice(0, 3)
+            .map((post) => (
+                <PostCard url={"/posts/" + post.slug} data={post.data} />
+            ))
+    }
+</div>
