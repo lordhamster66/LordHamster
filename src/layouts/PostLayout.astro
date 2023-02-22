@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import Tag from "../components/Tag.astro";
 const { frontmatter } = Astro.props;
 ---
 
@@ -15,13 +16,15 @@ const { frontmatter } = Astro.props;
         }
     </div>
     <div class="mx-auto mt-5 max-w-prose">
-        <div class="aspect-w-3 aspect-h-2">
-            <img
-                class="h-full w-full rounded-lg object-cover object-center"
-                src={frontmatter.image.url}
-                alt={frontmatter.image.alt}
-                loading="lazy"
-            />
+        <div
+            class:list={[
+                "grid grid-cols-1 gap-6 md:grid-cols-3",
+                { hidden: frontmatter.tags.length === 0 },
+            ]}
+        >
+            <div class="ml-3 flex gap-2">
+                {frontmatter.tags.map((tag) => <Tag tag={tag} />)}
+            </div>
         </div>
         <div class="prose prose-invert mt-8 prose-img:rounded-lg">
             <slot />
