@@ -5,7 +5,7 @@ gulp.task("deploy", function () {
   return gulp.src(["dist/**"]).pipe(
     rsync({
       root: "dist/",
-      hostname: "42.192.230.152",
+      hostname: "blog.lordhamster.com",
       destination: "/home/jacob/LordHamster",
       progress: true,
       username: "jacob",
