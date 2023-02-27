@@ -26,8 +26,8 @@ const { frontmatter } = Astro.props;
                 {frontmatter.tags.map((tag) => <Tag tag={tag} />)}
             </div>
         </div>
-        <div class="prose prose-invert mt-8 prose-img:rounded-lg">
+        <article class="prose prose-invert mt-8 prose-img:rounded-lg">
             <slot />
-        </div>
+        </article>
     </div>
 </BaseLayout>
