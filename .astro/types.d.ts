@@ -1,7 +1,24 @@
 declare module 'astro:content' {
+	interface Render {
+		'.md': Promise<{
+			Content: import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
+			remarkPluginFrontmatter: Record<string, any>;
+		}>;
+	}
+}
+
+declare module 'astro:content' {
 	export { z } from 'astro/zod';
 	export type CollectionEntry<C extends keyof typeof entryMap> =
-		(typeof entryMap)[C][keyof (typeof entryMap)[C]] & Render;
+		(typeof entryMap)[C][keyof (typeof entryMap)[C]];
+
+	export const image: () => import('astro/zod').ZodObject<{
+		src: import('astro/zod').ZodString;
+		width: import('astro/zod').ZodNumber;
+		height: import('astro/zod').ZodNumber;
+		format: import('astro/zod').ZodString;
+	}>;
 
 	type BaseSchemaWithoutEffects =
 		| import('astro/zod').AnyZodObject
@@ -57,14 +74,6 @@ declare module 'astro:content' {
 		Required<ContentConfig['collections'][C]>['schema']
 	>;
 
-	type Render = {
-		render(): Promise<{
-			Content: import('astro').MarkdownInstance<{}>['Content'];
-			headings: import('astro').MarkdownHeading[];
-			remarkPluginFrontmatter: Record<string, any>;
-		}>;
-	};
-
 	const entryMap: {
 		"posts": {
 "20220818.md": {
@@ -73,42 +82,42 @@ declare module 'astro:content' {
   body: string,
   collection: "posts",
   data: InferEntrySchema<"posts">
-},
+} & { render(): Render[".md"] },
 "20220820.md": {
   id: "20220820.md",
   slug: "20220820",
   body: string,
   collection: "posts",
   data: InferEntrySchema<"posts">
-},
+} & { render(): Render[".md"] },
 "20220828.md": {
   id: "20220828.md",
   slug: "20220828",
   body: string,
   collection: "posts",
   data: InferEntrySchema<"posts">
-},
+} & { render(): Render[".md"] },
 "20220830.md": {
   id: "20220830.md",
   slug: "20220830",
   body: string,
   collection: "posts",
   data: InferEntrySchema<"posts">
-},
+} & { render(): Render[".md"] },
 "20221001.md": {
   id: "20221001.md",
   slug: "20221001",
   body: string,
   collection: "posts",
   data: InferEntrySchema<"posts">
-},
+} & { render(): Render[".md"] },
 "20230222.md": {
   id: "20230222.md",
   slug: "20230222",
   body: string,
   collection: "posts",
   data: InferEntrySchema<"posts">
-},
+} & { render(): Render[".md"] },
 },
 
 	};
