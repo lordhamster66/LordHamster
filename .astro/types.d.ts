@@ -67,44 +67,44 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"posts": {
-"post0000.md": {
-  id: "post0000.md",
-  slug: "post0000",
+"20220818.md": {
+  id: "20220818.md",
+  slug: "20220818",
   body: string,
   collection: "posts",
   data: InferEntrySchema<"posts">
 },
-"post0001.md": {
-  id: "post0001.md",
-  slug: "post0001",
+"20220820.md": {
+  id: "20220820.md",
+  slug: "20220820",
   body: string,
   collection: "posts",
   data: InferEntrySchema<"posts">
 },
-"post0002.md": {
-  id: "post0002.md",
-  slug: "post0002",
+"20220828.md": {
+  id: "20220828.md",
+  slug: "20220828",
   body: string,
   collection: "posts",
   data: InferEntrySchema<"posts">
 },
-"post0003.md": {
-  id: "post0003.md",
-  slug: "post0003",
+"20220830.md": {
+  id: "20220830.md",
+  slug: "20220830",
   body: string,
   collection: "posts",
   data: InferEntrySchema<"posts">
 },
-"post0004.md": {
-  id: "post0004.md",
-  slug: "post0004",
+"20221001.md": {
+  id: "20221001.md",
+  slug: "20221001",
   body: string,
   collection: "posts",
   data: InferEntrySchema<"posts">
 },
-"post0005.md": {
-  id: "post0005.md",
-  slug: "post0005",
+"20230222.md": {
+  id: "20230222.md",
+  slug: "20230222",
   body: string,
   collection: "posts",
   data: InferEntrySchema<"posts">
