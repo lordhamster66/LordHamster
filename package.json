@@ -14,8 +14,8 @@
         "@astrojs/tailwind": "^3.0.1",
         "@tailwindcss/aspect-ratio": "^0.4.2",
         "@tailwindcss/typography": "^0.5.9",
-        "astro": "^2.0.15",
-        "tailwindcss": "^3.2.6"
+        "astro": "^2.1.2",
+        "tailwindcss": "^3.2.7"
     },
     "devDependencies": {
         "gulp": "^4.0.2",
