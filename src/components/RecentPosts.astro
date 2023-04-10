@@ -22,7 +22,7 @@ const allPosts = await getCollection("posts");
     {
         allPosts
             .reverse()
-            .splice(0, 3)
+            .slice(0, 3)
             .map((post) => (
                 <PostCard url={"/posts/" + post.slug} data={post.data} />
             ))
